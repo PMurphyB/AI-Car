@@ -7,6 +7,7 @@ import neat
 SCREEN_WIDTH = 1244
 SCREEN_HEIGHT = 1016
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("AI Car")
 
 TRACK = pygame.image.load("Assets/track.png")
 
