@@ -35,7 +35,7 @@ class Car(pygame.sprite.Sprite) :
         self.data()
         
     def drive(self) :
-        self.rect.center += self.vel_vector * 6
+        self.rect.center += self.vel_vector * 5
             
     def collision(self) :
         length = 15
