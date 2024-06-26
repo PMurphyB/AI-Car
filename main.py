@@ -43,9 +43,14 @@ class Car(pygame.sprite.Sprite) :
         collision_point_left = [int(self.rect.center[0] + math.cos(math.radians(self.angle - 18)) * length),
                                 int(self.rect.center[1] - math.sin(math.radians(self.angle - 18)) * length)]
         
-        if SCREEN.get_at(collision_point_right) == pygame.Color(2, 105, 31, 255) \
-           or SCREEN.get_at(collision_point_left) == pygame.Color(2, 105, 31, 255) :
-            self.alive = False
+        try :
+        
+            if SCREEN.get_at(collision_point_right) == pygame.Color(2, 105, 31, 255) \
+               or SCREEN.get_at(collision_point_left) == pygame.Color(2, 105, 31, 255) :
+                self.alive = False
+                
+        except :
+            pass
             
         pygame.draw.circle(SCREEN, (0, 255, 255, 0), collision_point_right, 4)
         pygame.draw.circle(SCREEN, (0, 255, 255, 0), collision_point_left, 4)
