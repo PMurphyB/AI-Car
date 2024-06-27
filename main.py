@@ -4,6 +4,7 @@ import math
 import sys
 import neat
 
+# Initialize screen size based on the size of the track png.
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 563
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
