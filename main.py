@@ -139,6 +139,7 @@ def eval_genomes(genomes, config) :
             if not car.sprite.alive :
                 remove(i)
                 
+        # Car controls
         for i, car in enumerate(cars) :
             output = nets[i].activate(car.sprite.data())
             if output[0] > 0.7 :
