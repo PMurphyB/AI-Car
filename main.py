@@ -25,7 +25,7 @@ class Car(pygame.sprite.Sprite) :
         self.alive = True
         self.radars = []
         
-        
+    # 
     def update(self) :
         self.radars.clear()
         self.drive()
@@ -158,6 +158,7 @@ def eval_genomes(genomes, config) :
 def run(path_to_config) :
     global pop
     
+    # NEAT Configuration
     config = neat.config.Config(
         neat.DefaultGenome,
         neat.DefaultReproduction,
