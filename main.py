@@ -121,7 +121,7 @@ def eval_genomes(genomes, config) :
         nets.append(net)
         genome.fitness = 0
         
-    
+    # Set the game state
     run = True
     while run :
         for event in pygame.event.get() :
