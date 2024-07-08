@@ -10,6 +10,8 @@ SCREEN_HEIGHT = 563
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("AI Car")
 
+# The track is defined as the track labeled track.png.
+# To load a new track, rename the desired track to "track.png" in the Asseets folder
 TRACK = pygame.image.load("Assets/track.png")
 
 class Car(pygame.sprite.Sprite) :
