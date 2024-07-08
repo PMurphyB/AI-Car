@@ -14,6 +14,7 @@ pygame.display.set_caption("AI Car")
 # To load a new track, rename the desired track to "track.png" in the Asseets folder
 TRACK = pygame.image.load("Assets/track.png")
 
+# The Car class.  Needs to be moved to seperate file!
 class Car(pygame.sprite.Sprite) :
     def __init__(self) :
         super().__init__()
