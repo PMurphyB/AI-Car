@@ -5,11 +5,6 @@ import sys
 
 import neat
 
-<<<<<<< Updated upstream
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 563
-=======
-# Initialize screen size based on the size of the track png.
 SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
 
@@ -20,12 +15,14 @@ BORDER_COLOR = (255, 255, 255, 255)
 
 currentGeneration = 0
 
->>>>>>> Stashed changes
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("AI Car")
 
+# The track is defined as the track labeled track.png.
+# To load a new track, rename the desired track to "track.png" in the Asseets folder
 TRACK = pygame.image.load("Assets/track.png")
 
+# The Car class.  Needs to be moved to seperate file!
 class Car(pygame.sprite.Sprite) :
     def __init__(self) :
         super().__init__()
@@ -39,7 +36,7 @@ class Car(pygame.sprite.Sprite) :
         self.alive = True
         self.radars = []
         
-        
+    # 
     def update(self) :
         self.radars.clear()
         self.drive()
@@ -50,7 +47,7 @@ class Car(pygame.sprite.Sprite) :
         self.data()
         
     def drive(self) :
-        self.rect.center += self.vel_vector * 6
+        self.rect.center += self.vel_vector * 5
             
     def collision(self) :
         length = 15
@@ -135,7 +132,7 @@ def eval_genomes(genomes, config) :
         nets.append(net)
         genome.fitness = 0
         
-    
+    # Set the game state
     run = True
     while run :
         for event in pygame.event.get() :
@@ -153,6 +150,7 @@ def eval_genomes(genomes, config) :
             if not car.sprite.alive :
                 remove(i)
                 
+        # Car controls
         for i, car in enumerate(cars) :
             output = nets[i].activate(car.sprite.data())
             if output[0] > 0.7 :
@@ -171,6 +169,7 @@ def eval_genomes(genomes, config) :
 def run(path_to_config) :
     global pop
     
+    # NEAT Configuration
     config = neat.config.Config(
         neat.DefaultGenome,
         neat.DefaultReproduction,
