@@ -2,11 +2,19 @@ import pygame
 import os
 import math
 import sys
+
 import neat
 
-# Initialize screen size based on the size of the track png.
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 563
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
+
+CAR_SIZE_X = 60
+CAR_SIZE_Y = 60
+
+BORDER_COLOR = (255, 255, 255, 255)
+
+currentGeneration = 0
+
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("AI Car")
 
