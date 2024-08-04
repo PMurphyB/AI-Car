@@ -13,6 +13,7 @@ CAR_SIZE_Y = 60
 
 BORDER_COLOR = (255, 255, 255, 255)
 
+# Generation counter
 currentGeneration = 0
 
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
